@@ -1,0 +1,68 @@
+h2 {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+.form-medics{
+    margin: auto;
+    width: fit-content;
+    padding: 10px;
+    text-align: center;
+}
+
+.boton-form{
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.medics{
+    margin: auto;
+    width: fit-content;
+    padding: 10px;
+    text-align: center;
+}
+
+.medics a{
+    border-radius: 5px;
+    border-color: rgb(40,40,40)
+}
+
+.for{
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+#boton-medico{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#foto{
+    background-image: linear-gradient(0deg, rgba(40,40,40,0.5), rgba(40,40,40,0.5)), url(../js/manual-hatdc-blog.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.search-form {
+    margin: auto;
+    width: fit-content;
+    padding: 10px;
+    text-align: center;
+}
+
+.search-form div{
+    margin-top: 10px;
+}
+
+.resultados{
+    margin: auto;
+    width: fit-content;
+    padding: 10px;
+    text-align: center;
+}
+
+.cuerpo{
+    min-height: 38vh;
+}

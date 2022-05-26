@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block changes %}
+<div class="cuerpo">
+<h2>Buscador</h2>
+
+<form class="search-form" action="{% url 'search' %}" method="GET">
+    <div>
+        <input type="text" name="medic_search" id="buscar-medico" placeholder="Ingrese nombre">
+        <input type="submit" value="Buscar Medico">
+    </div>
+    <div>
+        <input type="text" name="pacient_search" id="buscar-paciente" placeholder="Ingrese paciente">
+        <input type="submit" value="Buscar Paciente">
+    </div>
+    <div>
+        <input type="text" name="turn_search" id="buscar-turno" placeholder="Ingrese dia del turno">
+        <input type="submit" value="Buscar Turno">
+    </div>
+
+</form>
+    <div class="resultados">
+        {% if medics %}
+            <ul>
+                {% for medic in medics %}
+                    <li>
+                        Nombre: {{medic.name}} {{medic.surname}}
+                        -- Profesion: {{medic.medic_type}}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if pacients %}
+            <ul>
+                {% for pacient in pacients %}
+                    <li>
+                        Nombre: {{pacient.name}} {{pacient.surname}}
+                        -- Documento: {{pacient.dni}}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if turn %}
+        <ul>
+            {% for turn in turn %}
+                <li>
+                    Turno: {{turn.day}}
+                </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}
