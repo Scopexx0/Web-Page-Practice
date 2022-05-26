@@ -21,7 +21,7 @@ from web.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', home),
+    path('', home),
     path('medics/', include('medics.urls')),
     path('pacients/', include('pacients.urls')),
     path('extra/', include('extra.urls')),
