@@ -66,3 +66,13 @@ h2 {
 .cuerpo{
     min-height: 38vh;
 }
+
+.edicion{
+    text-decoration: none;
+    color: black;
+}
+
+#edit{
+    font-size: 16px;
+}
+

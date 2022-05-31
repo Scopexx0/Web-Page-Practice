@@ -32,3 +32,13 @@ def create_turns(request):
     }
     return render(request, 'turns_form.html', context_dict)
 
+
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
+
+class TurnsListView(ListView):
+    model = Turns
+    template_name = 'turns_list.html'
+
