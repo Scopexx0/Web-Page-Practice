@@ -4,6 +4,9 @@ from pacients import views
 
 
 urlpatterns = [
-    path('pacient-list/', views.pacient_list),
-    path('pacient-form/', views.create_pacient),
+    path('pacients-list/', views.PacientListView.as_view(), name='pacients-list'),
+    path('pacients/add/', views.PacientCreateView.as_view(), name='pacients-add'),
+    path('pacients/<int:pk>/detail', views.PacientDetailView.as_view(), name='pacients-detail'),
+    path('pacients/<int:pk>/update', views.PacientUpdateView.as_view(), name='pacients-update'),
+    path('pacients/<int:pk>/delete', views.PacientDeleteView.as_view(), name='pacients-delete'),
 ]
