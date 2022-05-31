@@ -1,35 +1,33 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 from pacients.models import Pacient
 from pacients.forms import PacientForm
 # Create your views here.
 
+class PacientListView(ListView):
+    model = Pacient
+    template_name = 'pacients_list.html'
 
-def pacient_list(request):
-    pacient = Pacient.objects.all()
+class PacientDetailView(DetailView):
+    model = Pacient
+    template_name = 'pacients_detail.html'
 
-    context_dict = {
-        'pacients': pacient,
-    }
+class PacientCreateView(CreateView):
+    model = Pacient
+    template_name = 'pacients_form.html'
+    success_url = reverse_lazy('pacients-list')
+    fields = '__all__'
 
-    return render(request, 'pacients.html', context_dict)
+class PacientUpdateView(UpdateView):
+    model = Pacient
+    template_name = 'pacients_form.html'
+    success_url = reverse_lazy('pacients-list')
+    fields = '__all__'
 
-def create_pacient(request):
-    if request.method == 'POST':
-        pacient_form = PacientForm(request.POST)
-        if pacient_form.is_valid():
-            data = pacient_form.cleaned_data
-            pacient = Pacient(name=data['name'], surname=data['surname'], dni=data['dni'])
-            pacient.save()
-
-            pacient = Pacient.objects.all()
-            context_dict = {
-                'pacients': pacient,
-            }
-            return render(request, 'pacients.html', context_dict)
-    
-    pacient_form = PacientForm(request.POST)
-    context_dict = {
-        'pacient_form': pacient_form,
-    }
-    return render(request, 'pacients_form.html', context_dict)
+class PacientDeleteView(DeleteView):
+    model = Pacient
+    template_name = 'pacients_confirm_delete.html'
+    success_url = reverse_lazy('pacients-list')
