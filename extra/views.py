@@ -1,34 +1,33 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 from extra.models import Turns
 from extra.forms import TurnsForm
 # Create your views here.
 
-def turns_list(request):
-    turn = Turns.objects.all()
+class TurnsListView(ListView):
+    model = Turns
+    template_name = 'turns_list.html'
 
-    context_dict = {
-        'turn': turn,
-    }
-    return render(request, 'turns.html', context_dict)
+class TurnsDetailView(DetailView):
+    model = Turns
+    template_name = 'turns_detail.html'
 
-def create_turns(request):
-    if request.method == 'POST':
-        turn_form = TurnsForm(request.POST)
-        if turn_form.is_valid():
-            data = turn_form.cleaned_data
-            turn = Turns(day=data['day'])
-            turn.save()
+class TurnsCreateView(CreateView):
+    model = Turns
+    template_name = 'turns_form.html'
+    success_url = reverse_lazy('turns-list')
+    fields = '__all__'
 
-            turns = Turns.objects.all()
-            context_dict= {
-                'turn': turns
-            }
-            return render(request, 'turns.html', context_dict)
-    
-    turn_form = TurnsForm(request.POST)
-    context_dict = {
-        'turn_form': turn_form,
-    }
-    return render(request, 'turns_form.html', context_dict)
+class TurnsUpdateView(UpdateView):
+    model = Turns
+    template_name = 'turns_form.html'
+    success_url = reverse_lazy('turns-list')
+    fields = '__all__'
 
+class TurnsDeleteView(DeleteView):
+    model = Turns
+    template_name = 'turns_confirm_delete.html'
+    success_url = reverse_lazy('turns-list')

@@ -65,4 +65,16 @@ h2 {
 
 .cuerpo{
     min-height: 38vh;
+    justify-content: center;
+}
+
+.edicion{
+    color: black;
+    text-decoration: none;
+}
+
+#edit{
+    font-size: 17px;
+    margin-top: auto;
+    padding-bottom: 8px;
 }

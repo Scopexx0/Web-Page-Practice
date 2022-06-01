@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block changes %}
+<h2>Lista de Medicos</h2>
+<div class="cuerpo">
+    <div class="medics">
+        <a class="btn btn-light" id="boton-medico" href="{% url 'medics-add' %}">Crear nuevo Medico</a>
+        <hr></hr>
+        <ul>
+            {% for medic in medic_list %}
+                <li class="for">
+                    Medico: {{medic.surname}}
+                    <div class="btn btn-primary" id="edit">
+                        <a class='edicion' href="{% url 'medics-detail' medic.id %}">
+                            Mostrar mas...
+                        </a>
+                        |
+                        <a class='edicion' href="{% url 'medics-update' medic.id %}">
+                            Editar
+                        </a>
+                        |
+                        <a class='edicion' href="{% url 'medics-delete' medic.id %}">
+                            Borrar
+                        </a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block changes %}
+<div class="cuerpo">
+    <h2>Lista de Turnos</h2>
+    <div class="medics">
+        <a class="btn btn-light" id="boton-medico" href="{% url 'turns-add' %}">Crear nuevo Turno</a>
+        <hr></hr>
+        <ul>
+            {% for turn in turns_list %}
+                <li class="for">
+                    Turno: {{turn.day}}
+                    <div class="btn btn-primary" id="edit">
+                        <a class='edicion' href="{% url 'turns-update' turn.id %}">
+                            Editar
+                        </a>
+                        |
+                        <a class='edicion' href="{% url 'turns-delete' turn.id %}">
+                            Borrar
+                        </a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

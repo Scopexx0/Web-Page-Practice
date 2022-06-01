@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block changes %}
+
+<h2>Eliminar Turno</h2>
+<hr></hr>
+<div class="form-medics">
+    <p>Estás seguro de eliminar el Turno: {{ turns.day }}?</p>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="boton-form">
+            <input class="btn btn-warning" type="submit" value="Si, eliminar.">
+            <a class="btn btn-primary" href="{% url 'turns-list' %}" >Cancelar</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

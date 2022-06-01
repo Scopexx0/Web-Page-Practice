@@ -4,37 +4,40 @@ from medics.models import Medic
 from medics.forms import MedicForm
 from pacients.models import Pacient
 from extra.models import Turns
+
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 # Create your views here.
 
 
-def medic_list(request):
-    medic = Medic.objects.all()
+class MedicListView(ListView):
+    model = Medic
+    template_name = 'medics_list.html'
 
-    context_dict = {
-        'medics': medic,
-    }
+class MedicDetailView(DetailView):
+    model = Medic
+    template_name = 'medics_detail.html'
 
-    return render(request, 'medics.html', context_dict)
+class MedicCreateView(CreateView):
+    model = Medic
+    template_name = 'medics_form.html'
+    success_url = reverse_lazy('medics-list')
+    fields = '__all__'
 
-def create_medic(request):
-    if request.method == 'POST':
-        medic_form = MedicForm(request.POST)
-        if medic_form.is_valid():
-            data = medic_form.cleaned_data
-            medic = Medic(name=data['name'], surname=data['surname'], medic_type=data['medic_type'])
-            medic.save()
+class MedicUpdateView(UpdateView):
+    model = Medic
+    template_name = 'medics_form.html'
+    success_url = reverse_lazy('medics-list')
+    fields = '__all__'
 
-            medics = Medic.objects.all()
-            context_dict = {
-                'medics': medics,
-            }
-            return render(request, 'medics.html', context_dict)
-    
-    medic_form = MedicForm(request.POST)
-    context_dict = {
-        'medic_form': medic_form,
-    }
-    return render(request, 'medics_form.html', context_dict)
+class MedicDeleteView(DeleteView):
+    model = Medic
+    template_name = 'medics_confirm_delete.html'
+    success_url = reverse_lazy('medics-list')
+    fields = '__all__'
+
 
 
 def search(request):
