@@ -16,10 +16,9 @@ class TurnsDetailView(DetailView):
     template_name = 'turns_detail.html'
 
 class TurnsCreateView(CreateView):
-    model = Turns
+    form_class = TurnsForm
     template_name = 'turns_form.html'
     success_url = reverse_lazy('turns-list')
-    fields = '__all__'
 
 class TurnsUpdateView(UpdateView):
     model = Turns
