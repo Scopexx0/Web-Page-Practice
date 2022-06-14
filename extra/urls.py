@@ -2,7 +2,7 @@ from django.urls import path
 
 from extra import views
 
-
+app_name='extra'
 urlpatterns = [
     path('turns-list/', views.TurnsListView.as_view(), name='turns-list'),
     path('turns/add/', views.TurnsCreateView.as_view(), name='turns-add'),

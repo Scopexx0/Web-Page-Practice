@@ -4,7 +4,7 @@
 <div class="cuerpo">
 <h2>Buscador</h2>
 
-<form class="search-form" action="{% url 'search' %}" method="GET">
+<form class="search-form" action="{% url 'home:search' %}" method="GET">
     <div>
         <input type="text" name="medic_search" id="buscar-medico" placeholder="Ingrese nombre">
         <input type="submit" value="Buscar Medico">
@@ -36,7 +36,10 @@
                 {% for pacient in pacients %}
                     <li>
                         Nombre: {{pacient.name}} {{pacient.surname}}
+
+                        {% if user.is_authenticated %}
                         -- Documento: {{pacient.dni}}
+                        {% endif %}
                     </li>
                 {% endfor %}
             </ul>

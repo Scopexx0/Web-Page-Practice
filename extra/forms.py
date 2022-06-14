@@ -1,5 +1,4 @@
 from django.forms import DateInput, ModelForm
-
 from extra.models import Turns
 
 # class TurnsForm(forms.Form):
@@ -11,4 +10,7 @@ class TurnsForm(ModelForm):
         fields = ['day']
         widgets = {
             'day': DateInput(attrs={'type':'date'}),
+        }
+        labels = {
+            'day' : 'Dia del turno'
         }

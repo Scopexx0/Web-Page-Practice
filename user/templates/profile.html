@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block changes %}
+<div class="cuerpo">
+    <div class="perfil">
+        <h2>Perfil del Usuario:<br>{{user.username}}</h2>
+        <div class="nombre">
+            <p>
+                Nombre: {{user.first_name}}
+            </p>
+                Apellido: {{user.last_name}}
+        </div>
+            <img height='100px' src="{{url}}" alt="">
+            <a class="btn btn-primary" id="boton-medico" href="{% url 'user:profile_update' %}">Editar usuario</a>
+    </div>
+</div>
+{% endblock %}

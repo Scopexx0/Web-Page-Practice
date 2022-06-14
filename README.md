@@ -1,21 +1,26 @@
 <h1>Web Page-Practice</h1>
+<h2>Jeronimo Augurusa</h2>
+
+## About
+* Lo que hice fue algo similar a una web o aplicacion usada en hospitales/clinicas medicas, la cual tiene las opciones mas basicas que son de agregar, editar y borrar nuevos datos, en este caso: Medicos, Pacientes y Turnos. Esta web a su vez cumple con las condiciones de blog, ya que posee una edicion y visualizacion de estos mismos datos/modelos.
 
 ## Instrucciones para lectura de codigo
-* El codigo consiste en 3 apps, una con cada funcion.
-* El template '/home' lo deje en la primer app, junto con su index.
+* El codigo consiste en 5 apps, una con cada funcion.
+* Los estáticos los deje en la primer app(medics).
 
 
 ## Instrucciones para usar la web
-* El boton de diagnosticos, login, sign-up son decorativos por ahora.
 * Consiste en:
     * * Una pagina principal con buscador.
     * * Barra de navegacion.
     * * Formulario para creacion de datos con su vista respectiva en forma de lista.
+    * * Login y registro de usuario.
+    * * Edicion de usuario.
+    * * Tipo de usuario y permisos para manejar/editar datos dentro de la web.
 
 
 ## Proyecto futuro
-* Hacer funcionar los botones que no lo hacen.
-* Integrar y poder relacionar los 3 modelos entre si.(Medicos, Pacientes, Turnos)
+* Integrar y poder relacionar los 4 modelos entre si.(Medicos, Pacientes, Turnos, Usuario)
 * Agregar informacion y diseño en el home.
 
 

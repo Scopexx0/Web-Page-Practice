@@ -4,21 +4,23 @@
 <div class="cuerpo">
     <h2>Lista de Turnos</h2>
     <div class="medics">
-        <a class="btn btn-light" id="boton-medico" href="{% url 'turns-add' %}">Crear nuevo Turno</a>
+        <a class="btn btn-light" id="boton-medico" href="{% url 'extra:turns-add' %}">Crear nuevo Turno</a>
         <hr></hr>
         <ul>
             {% for turn in turns_list %}
                 <li class="for">
                     Turno: {{turn.day}}
+                    {% if user.is_superuser %}
                     <div class="btn btn-primary" id="edit">
-                        <a class='edicion' href="{% url 'turns-update' turn.id %}">
+                        <a class='edicion' href="{% url 'extra:turns-update' turn.id %}">
                             Editar
                         </a>
                         |
-                        <a class='edicion' href="{% url 'turns-delete' turn.id %}">
+                        <a class='edicion' href="{% url 'extra:turns-delete' turn.id %}">
                             Borrar
                         </a>
                     </div>
+                    {% endif %}
                 </li>
             {% endfor %}
         </ul>

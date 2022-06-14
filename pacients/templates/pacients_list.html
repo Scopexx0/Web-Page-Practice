@@ -4,24 +4,26 @@
 <div class="cuerpo">
     <h2>Lista de Pacientes</h2>
     <div class="medics">
-        <a class="btn btn-light" id="boton-medico" href="{% url 'pacients-add' %}">Crear nuevo Paciente</a>
+        <a class="btn btn-light" id="boton-medico" href="{% url 'pacients:pacients-add' %}">Crear nuevo Paciente</a>
         <hr></hr>
         <ul>
             {% for pacient in pacient_list %}
                 <li class="for">
                     {{pacient.name}}
                     <div class="btn btn-primary" id="edit">
-                        <a class='edicion' href="{% url 'pacients-detail' pacient.id %}">
+                        <a class='edicion' href="{% url 'pacients:pacients-detail' pacient.id %}">
                             Mostrar mas...
                         </a>
+                        {% if user.is_superuser %}
                         |
-                        <a class='edicion' href="{% url 'pacients-update' pacient.id %}">
+                        <a class='edicion' href="{% url 'pacients:pacients-update' pacient.id %}">
                             Editar
                         </a>
                         |
-                        <a class='edicion' href="{% url 'pacients-delete' pacient.id %}">
+                        <a class='edicion' href="{% url 'pacients:pacients-delete' pacient.id %}">
                             Borrar
                         </a>
+                        {% endif %}
                     </div>
                 </li>
             {% endfor %}
