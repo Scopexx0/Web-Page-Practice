@@ -55,7 +55,7 @@ source venv/bin/activate
 
 - Crear el archivo coderhouse_project/.env con el siguente contenido
 ```
-SECRET_KEY=4e8&y0ygfox1cg7f3owcku9$hv_(nu7t3ku$p637-+!so2jlvs
+SECRET_KEY='django-insecure-q1hqti6f$xpv17fmav3*2_-q#hhif8xctl(wrucp)e#@e!unlg'
 DEBUG=True
 ALLOWED_HOSTS=*,
 ```
