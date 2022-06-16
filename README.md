@@ -3,6 +3,9 @@
 
 [![Alt text](https://img.youtube.com/vi/oc4eyFGd7Xw/0.jpg)](https://www.youtube.com/watch?v=oc4eyFGd7Xw)
 
+
+Click on the image above to go to the video
+
 ## About
 * Lo que hice fue algo similar a una web o aplicacion usada en hospitales/clinicas medicas, la cual tiene las opciones mas basicas que son de agregar, editar y borrar nuevos datos, en este caso: Medicos, Pacientes y Turnos. Esta web a su vez cumple con las condiciones de blog, ya que posee una edicion y visualizacion de estos mismos datos/modelos.
 
