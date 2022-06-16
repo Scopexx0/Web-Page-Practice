@@ -12,12 +12,11 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
-import environ
 
 # EL ENVIRON NO ME FUNCIONO ASI QUE LO SUBI CON Todo LO QUE TENIA
-
-env = environ.Env()
-environ.Env.read_env()
+# import environ
+# env = environ.Env()
+# environ.Env.read_env()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,12 +27,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = 'django-insecure-q1hqti6f$xpv17fmav3*2_-q#hhif8xctl(wrucp)e#@e!unlg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool('DEBUG')
+DEBUG = True
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+ALLOWED_HOSTS = []
 
 # Application definition
 
