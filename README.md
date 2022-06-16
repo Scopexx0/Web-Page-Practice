@@ -49,9 +49,17 @@ C:/>c:/ruta/al/entorno/virtual/scripts/activate.bat
 python3 -m venv venv
 source venv/bin/activate
 ```
-- Instalar Django
-```bash
-pip install Django
+
+- Crear el archivo coderhouse_project/.env con el siguente contenido
+```
+SECRET_KEY=4e8&y0ygfox1cg7f3owcku9$hv_(nu7t3ku$p637-+!so2jlvs
+DEBUG=True
+ALLOWED_HOSTS=*,
+```
+
+- Instalar las dependencias del proyecto
+```
+pip install -r requirements.txt
 ```
 
 - Crear base de datos con los Modelos (hacer migraciones y migrar)
