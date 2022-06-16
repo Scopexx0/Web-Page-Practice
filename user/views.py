@@ -16,8 +16,9 @@ def register(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Usuario creado exitosamente!")
             return render(request=request, template_name='ask.html')
+        else:
+            messages.error(request, "Usuario no ha sido creado :(")
     form = UserRegisterForm()
     return render(request, context={'form':form}, template_name='register.html')
 
@@ -65,7 +66,7 @@ def update_user(request):
         form = UserEditForm(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
-            messages.success(request, "Datos cargados exitosamente")
+            messages.success(request, "Datos cargados exitosamente", extra_tags='names')
             return redirect('user:profile')
     
     form = UserEditForm(model_to_dict(user))
@@ -87,7 +88,7 @@ def avatar_load(request):
                     os.remove(avatar.image.path)
                 avatar.image = image
             avatar.save()
-            messages.success(request, "Imagen cargada exitosamente")
+            messages.success(request, "Imagen cargada exitosamente", extra_tags='image')
             return redirect('user:profile')
 
     form= AvatarForm()
