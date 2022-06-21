@@ -53,12 +53,7 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-- Crear el archivo coderhouse_project/.env con el siguente contenido
-```
-SECRET_KEY='django-insecure-q1hqti6f$xpv17fmav3*2_-q#hhif8xctl(wrucp)e#@e!unlg'
-DEBUG=True
-ALLOWED_HOSTS=*,
-```
+
 
 - Instalar las dependencias del proyecto
 ```
