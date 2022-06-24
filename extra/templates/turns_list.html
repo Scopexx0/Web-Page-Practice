@@ -5,7 +5,7 @@
 <h2>Lista de Turnos</h2>
 <div class="container">
     <a class="btn btn-primary justify-content-right"  href="{% url 'extra:turns-add' %}">Crear nuevo Turno</a>
- 
+    <hr></hr>
 <div class="row d-flex justify-content-center">
 
     <!--Grid column-->
@@ -15,8 +15,10 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Fecha:</th>
+                    {% if user.is_superuser %}
                     <th scope="col">Actualizar</th>
                     <th scope="col">Borrar</th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody>
