@@ -18,8 +18,10 @@
                             <th scope="col">Apellido</th>
                             <th scope="col">Especializacion</th>
                             <th scope="col">Detalle</th>
+                            {% if user.is_superuser %}
                             <th scope="col">Actualizar</th>
                             <th scope="col">Borrar</th>
+                            {% endif %}
                         </tr>
                     </thead>
                     <tbody>
