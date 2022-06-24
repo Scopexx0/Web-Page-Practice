@@ -1,29 +1,46 @@
 {% extends 'index.html' %}
 {% load static %}
 {% block changes %}
-<div class="cuerpo">
-    <h2>Lista de Turnos</h2>
-    <div class="medics">
-        <a class="btn btn-light" id="boton-medico" href="{% url 'extra:turns-add' %}">Crear nuevo Turno</a>
-        <hr></hr>
-        <ul>
-            {% for turn in turns_list %}
-                <li class="for">
-                    Turno: {{turn.day}}
+
+<h2>Lista de Turnos</h2>
+<div class="container">
+    <a class="btn btn-primary justify-content-right"  href="{% url 'extra:turns-add' %}">Crear nuevo Turno</a>
+ 
+<div class="row d-flex justify-content-center">
+
+    <!--Grid column-->
+    <div class="col-md-10">
+        <table class="table table-striped table-light">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Fecha:</th>
+                    <th scope="col">Actualizar</th>
+                    <th scope="col">Borrar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for turn in turns_list %}
+                <tr>
+                    <th scope="row">{{turn.id}}</th>
+                    <td>{{turn.day}}</td>
                     {% if user.is_superuser %}
-                    <div class="btn btn-primary" id="edit">
-                        <a class='edicion' href="{% url 'extra:turns-update' turn.id %}">
-                            Editar
-                        </a>
-                        |
-                        <a class='edicion' href="{% url 'extra:turns-delete' turn.id %}">
-                            Borrar
-                        </a>
-                    </div>
+                    <td><a href="{% url 'extra:turns-update' turn.id %}">
+                        <i class="fa fa-pencil" style="font-size:20px;color: rgb(0, 128, 236);"> </i></a>
+                    </td>
+                    <td><a href="{% url 'extra:turns-delete' turn.id %}">
+                        <i class="fa fa-trash" style="font-size:20px;color: rgb(0, 128, 236);"> </i></a>
+                    </td>
                     {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
+                </tr>
+                {% endfor %}
+    
+            </tbody>
+        </table>
+    
+    </div>
+    <!--Grid column-->
     </div>
 </div>
 {% endblock %}
+
