@@ -31,13 +31,13 @@ Click on the image above to go to the video
 
 # Instrucciones para ejecutar este proyecto
 
-- Clonar el proyecto y cambiar de rama
+- Clonar el proyecto y cambiar de rama para no dañar la main
 ```bash
 git clone https://github.com/Scopexx0/Web-Page-Practice.git
 
-cd django-coderhouse-project
+cd web
 
-git checkout class_21
+git checkout -b not_main
 
 ```
 
