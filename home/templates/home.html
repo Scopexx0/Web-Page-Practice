@@ -73,8 +73,10 @@
                     <th scope="col">Apellido</th>
                     <th scope="col">DNI</th>
                     <th scope="col">Detalle</th>
+                    {% if user.is_superuser %}
                     <th scope="col">Actualizar</th>
                     <th scope="col">Borrar</th>
+                    {% endif %}
                 </tr>
             </thead>
 
@@ -88,12 +90,14 @@
                     <td><a href="{% url 'pacients:pacients-detail' pacient.id %}">
                         <i class="fa fa-eye" style="font-size:20px;color: rgb(0, 128, 236);"> </i></a>
                     </td>
+                    {% if user.is_superuser %}
                     <td><a href="{% url 'pacients:pacients-update' pacient.id %}">
                         <i class="fa fa-pencil" style="font-size:20px;color: rgb(0, 128, 236);"> </i></a>
                     </td>
                     <td><a href="{% url 'pacients:pacients-delete' pacient.id %}">
                         <i class="fa fa-trash" style="font-size:20px;color: rgb(0, 128, 236);"> </i></a>
                     </td>
+                    {% endif %}
                 </tr>
                 {% endfor %}
             </tbody>
@@ -110,8 +114,10 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Fecha:</th>
+                    {% if user.is_superuser %}
                     <th scope="col">Actualizar</th>
                     <th scope="col">Borrar</th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody>
