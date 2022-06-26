@@ -34,6 +34,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -49,9 +51,10 @@ INSTALLED_APPS = [
     'extra',
     'user',
     'home',
-    #'blog',
+    #Articles,
     'ckeditor',
     'ckeditor_uploader',
+    'article',
     #'widget_tweaks',
 ]
 
