@@ -5,21 +5,26 @@
 <scrip type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 
 {% block changes %}
-<h1>{{ article.title }}</h1>
-<hr>
-<p>{{ article.content | safe }}</p>
-<hr>
-<p>{{ article.content_upload | safe  }}</p>
+<div class="container text-center">
 
-<hr>
+    <h1>{{ article.title }}</h1>
+    <hr>
+    <p>{{ article.content | safe }}</p>
+    <hr>
+    <p>{{ article.content_upload | safe  }}</p>
+    
+    <hr>
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        {{ form.media }}
+        
+        {{ form.as_p }}
+        <button class="btn btn-primary" type="submit">Subir cambios</button>
+    </form>
+    <br>
 
-<form method="post">
-    {% csrf_token %}
-
-    {{ form.media }}
-
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
-</form>
-{% endblock %}
-
+</div>
+    {% endblock %}
+    

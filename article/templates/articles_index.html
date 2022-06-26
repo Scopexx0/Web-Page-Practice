@@ -7,13 +7,15 @@
 {% block changes %}
 
 {% for article in articles %}
-
-<h1>{{ article.title }}</h1>
-
-<div class="body">{{ article.content | safe}}</div>
-
-<dic class="body-upload">{{ article.content_upload | safe}}</dic>
-
+<div class="container text-center">
+    
+    <h1>{{ article.title }}</h1>
+    
+    <div class="body">{{ article.content | safe}}</div>
+    
+    <dic class="body-upload">{{ article.content_upload | safe}}</dic>
+    
+</div>
 {% endfor %}
 
 {% endblock %}
