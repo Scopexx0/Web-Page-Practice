@@ -6,6 +6,11 @@
 
 Click on the image above to go to the video
 
+## Integrantes
+* Jeremias y Jeronimo.
+* Jeremias realizo el modelo de articulo agregando el ckeditor, añadio diseños, realizo modelos de usuario y medicos.
+* Jeronimo realizo los comentarios y agrego a el articulo, añadio diseños, realizo modelos de pacientes y turnos, realizo modelos de prueba.
+
 ## About
 * Lo que hice fue algo similar a una web o aplicacion usada en hospitales/clinicas medicas, la cual tiene las opciones mas basicas que son de agregar, editar y borrar nuevos datos, en este caso: Medicos, Pacientes y Turnos. Esta web a su vez cumple con las condiciones de blog, ya que posee una edicion y visualizacion de estos mismos datos/modelos.
 
