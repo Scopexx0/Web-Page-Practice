@@ -18,7 +18,7 @@ from django.conf import settings
 from django.urls import path , include
 from django.conf.urls.static import static
 
-from article.views import index, detail
+from article.views import index, detail, add_comment
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +30,7 @@ urlpatterns = [
     path('user/', include('user.urls')),
     path('article/', index, name='index'),
     path('detail/', detail, name='detail'),
+    path('product/<int:pk>/add-comment', add_comment, name='add-comment'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
